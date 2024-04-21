@@ -1,0 +1,15 @@
+{% extends 'user_admin/index.html' %}
+{% block title %}Admin | Profile{% endblock title %}
+
+{% block content %}
+<section>
+    <h1>Profile</h1>
+    <div>
+        <p>Username: {{request.user.username}}</p>
+        <p>First Name: {{request.user.first_name}}</p>
+        <p>Last Name: {{request.user.last_name}}</p>
+        <p>Email: {{request.user.email}}</p>
+        <a href="/user-admin/edit-profile"><button>Edit</button></a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'user_admin/index.html' %}
+{% block title %}Admin | Clients{% endblock title %}
+
+{% block content %}
+    <h1>Non-Approved Clients List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for client in inactive_clients %}
+            <tr>
+                <td>{{client.username}}</td>
+                <td>{{client.email}}</td>
+                <td><a href="{% url 'approve-user' client.email %}"><button>Approve</button></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h1>Approved Clients List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Approval</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for client in active_clients %}
+            <tr>
+                <td>{{client.username}}</td>
+                <td>{{client.email}}</td>
+                <td><a href="{% url 'revoke-user' client.email %}"><button>Revoke</button></a>
+                    <a href="{% url 'remove-user' client.email %}"><button>Remove</button></a></td>
+            </tr>
+            {% endfor %}
+            <script>
+                function remove_client(id){
+                    alert(id);
+                };
+            </script>
+        </tbody>
+    </table>
+{% endblock %}>

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}BENITTON | Plumber{% endblock title %}
+{% block base %}
+    <h1>Welcome {{request.user.username}}</h1>
+    <nav>
+        <ul>
+            <a href="/plumber/profile"><li>Profile</li></a>
+            <a href="/plumber/products"><li>Products</li></a>
+            <a href="/signout"><li>Signout</li></a>
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
+{% endblock %}

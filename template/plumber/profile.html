@@ -1,0 +1,16 @@
+{% extends 'plumber/index.html' %}
+{% block title %}Plumber | Profile{% endblock title %}
+
+{% block content %}
+<section>
+    <h1>Profile</h1>
+    <div>
+        <p>Username: {{request.user.username}}</p>
+        <p>First Name: {{request.user.first_name}}</p>
+        <p>Last Name: {{request.user.last_name}}</p>
+        <p>Email: {{request.user.email}}</p>
+        <a href="/plumber/edit-profile"><button>Edit</button></a>
+    </div>
+    <a href="/plumber/delete-account">Delete Account</a>
+</section>
+{% endblock %}

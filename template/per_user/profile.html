@@ -1,0 +1,16 @@
+{% extends 'per_user/index.html' %}
+{% block title %}User | Profile{% endblock title %}
+
+{% block content %}
+<section>
+    <h1>Profile</h1>
+    <div>
+        <p>Username: {{request.user.username}}</p>
+        <p>First Name: {{request.user.first_name}}</p>
+        <p>Last Name: {{request.user.last_name}}</p>
+        <p>Email: {{request.user.email}}</p>
+        <a href="/user/edit-profile"><button>Edit</button></a>
+    </div>
+    <a href="/delete-account">Delete Account</a>
+</section>
+{% endblock %}

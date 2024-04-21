@@ -1,0 +1,50 @@
+{% extends 'user_admin/index.html' %}
+{% block title %}Admin | Edit Product{% endblock title %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="pro_name">Product Name:
+        <input type="text" id="pro_name" name="pro_name" value="{{product.pro_name}}"><br>
+    </label>
+
+    <label for="pro_price">Product Price:
+        <input type="number" id="pro_price" name="pro_price" value="{{product.pro_price}}"><br>
+    </label>
+    <label for="pro_price_per_user">
+        Product Price for User:
+        <input type="number" id="pro_price_per_user" name="pro_price_per_user" value="{{product.pro_price_per_user}}"><br>
+    </label>
+    <label for="pro_price_prime">
+        Product Price for Prime:
+        <input type="number" id="pro_price_prime" name="pro_price_prime" value="{{product.pro_price_prime}}"><br>
+    </label>
+    <label for="pro_price_plumber">
+        Product Price for Plumber:
+        <input type="number" id="pro_price_plumber" name="pro_price_plumber" value="{{product.pro_price_plumber}}"><br>
+    </label>
+
+    <label for="pro_image">Product Image:
+        <img style="width: 100px;" src="data:image/jpeg;base64,{{ product.pro_image }}" alt="Product Image">
+        <input type="file" id="pro_image" name="pro_image" accept="image/*"><br>
+    </label>
+    
+    <label for="pro_description">Product Description:
+        <textarea id="pro_description" rows="5" cols="30" name="pro_description">{{product.pro_description}}</textarea><br>
+    </label>
+
+    <label for="pro_code">Product Code:
+        <input type="text" id="pro_code" name="pro_code" value="{{product.pro_code}}"><br>
+    </label>
+
+    <label for="pro_range">Product Range:
+        <input type="text" id="pro_range" name="pro_range" value="{{product.pro_range}}"><br>
+    </label>
+
+    <label for="pro_features">Product Features:
+        <textarea id="pro_features" rows="5" cols="30" name="pro_features">{{product.pro_features}}</textarea><br>
+    </label>
+
+    <input type="submit" value="Update">
+</form>
+{% endblock %}

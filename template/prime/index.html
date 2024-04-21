@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}BENITTON | User{% endblock title %}
+{% block base %}
+    <h1>Welcome {{request.user.username}}</h1>
+    <nav>
+        <ul>
+            <a href="/prime/profile"><li>Profile</li></a>
+            <a href="/prime/products"><li>Products</li></a>
+            <a href="/signout"><li>Signout</li></a>
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
+{% endblock %}

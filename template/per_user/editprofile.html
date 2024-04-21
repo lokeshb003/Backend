@@ -1,0 +1,17 @@
+{% extends 'per_user/index.html' %}
+{% block title %}User | Edit Profile{% endblock title %}
+
+{% block content %}
+<section>
+    <h1>Profile</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="username" value="{{request.user.username}}" placeholder="Username" required>
+        <input type="text" name="firstname" value="{{request.user.first_name}}" placeholder="First Name">
+        <input type="text" name="lastname" value="{{request.user.last_name}}" placeholder="Last Name">
+        <input type="email" name="email" value="{{request.user.email}}" placeholder="Email" required>
+        <input type="password" name="password" id="password" placeholder="Password" required>
+        <input type="submit" value="Update">
+    </form>
+</section>
+{% endblock %}

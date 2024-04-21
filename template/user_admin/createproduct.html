@@ -1,0 +1,40 @@
+{% extends 'user_admin/index.html' %}
+{% block title %}Admin | Create Product{% endblock title %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="pro_name">Product Name:
+        <input type="text" id="pro_name" name="pro_name"><br>
+    </label>
+
+    <label for="pro_price">Product Price:
+        <input type="number" id="pro_price" name="pro_price" placeholder="Actual Price"><br>
+        <input type="number" id="pro_price_per_user" name="pro_price_per_user" placeholder="Price for User"><br>
+        <input type="number" id="pro_price_prime" name="pro_price_prime" placeholder="Price for Prime"><br>
+        <input type="number" id="pro_price_plumber" name="pro_price_plumber" placeholder="Price for Plumber"><br>
+    </label>
+
+    <label for="pro_description">Product Description:
+        <textarea id="pro_description" name="pro_description"></textarea><br>
+    </label>
+
+    <label for="pro_image">Product Image:
+        <input type="file" id="pro_image" name="pro_image" accept="image/*"><br>
+    </label>
+
+    <label for="pro_code">Product Code:
+        <input type="text" id="pro_code" name="pro_code"><br>
+    </label>
+
+    <label for="pro_range">Product Range:
+        <input type="text" id="pro_range" name="pro_range"><br>
+    </label>
+
+    <label for="pro_features">Product Features:
+        <textarea id="pro_features" name="pro_features"></textarea><br>
+    </label>
+
+    <input type="submit" value="Create Product">
+</form>
+{% endblock %}
